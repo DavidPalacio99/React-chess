@@ -1,0 +1,237 @@
+.ChessBoard {
+  padding: 10px;
+  /* border: 1px solid red; */
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modes {
+  /* border: 1px solid green; */
+  width: 40%;
+  height: 650px;
+  /* display: flex; */
+  /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+.icons {
+  color: var(--titleColor);
+  font-size: 16px;
+  color: var(--letters);
+}
+
+.controls {
+  margin-top: 15px;
+  width: 45%;
+  /* border: 1px solid purple; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.extremeButtons {
+  display: flex;
+  border-radius: 7px;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 15px;
+  background-color: #67cba0;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.extremeButtons:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  /* transform: scale(0.95); */
+}
+
+/* .extremeButtons:active {
+  box-shadow: 0 5px 0 #208f5f;
+  transform: translateY(5px);
+} */
+
+.controls > button > h3 {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.reset {
+  border-radius: 7px;
+  padding: 3px 15px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.reset:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  /* transform: scale(0.95); */
+}
+
+/* .reset:active {
+  box-shadow: 0 5px 0 #808080;
+  transform: translateY(5px);
+} */
+
+.title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+  /* border: 1px solid yellow; */
+}
+
+.title > h2 {
+  font-family: sans-serif;
+  font-size: 22px;
+  padding: 0;
+  /* border: 1px solid red; */
+  margin: 0;
+}
+
+.title > h3 {
+  font-family: sans-serif;
+  font-size: 18px;
+  padding: 0;
+  font-weight: 400;
+  /* border: 1px solid red; */
+}
+
+.gameModes {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameModes > h2 {
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+.gameModesButtons {
+  margin-bottom: 20px;
+  border-radius: 7px;
+  gap: 3px;
+  padding: 3px 15px;
+  background-color: #67cba0;
+  cursor: pointer;
+  border: none;
+  width: 200px;
+}
+
+.gameModesButtons:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.gameModes > button > h3 {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.selected {
+  background-color: var(--buttons);
+}
+
+.logo {
+  /* border: 1px solid brown; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo > h2 {
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+.history {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history > h2 {
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+.table {
+  height: 250px;
+  /* border: 1px solid black; */
+  width: 300px;
+  border-radius: 7px;
+  background-color: var(--buttons);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pieces {
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid blue; */
+  width: 100%;
+}
+
+.pieces > h3 {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.number {
+  font-family: sans-serif;
+  /* font-weight: bold; */
+  font-size: 16px;
+  margin-left: 15px;
+  margin-bottom: 7px;
+  display: inline;
+  margin-top: 10px;
+  /* border: 1px solid red; */
+}
+
+.wrap {
+  display: flex;
+  /* border: 1px solid red; */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.wrap > h4 {
+  /* border: 1px solid yellow; */
+}
+
+.whiteWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid black; */
+  width: 77%;
+  padding: 0;
+}
+
+.whiteWrap > h4 {
+  font-size: 17px;
+  font-family: sans-serif;
+  /* border: 1px solid red; */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.moves {
+  margin-right: 55px;
+}
+
+/* .containers {
+    border: 1px solid red;
+  } */

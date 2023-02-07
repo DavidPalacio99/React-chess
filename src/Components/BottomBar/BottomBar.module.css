@@ -1,0 +1,27 @@
+.BottomBar {
+  height: 55px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--topBackgorund);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.BottomBar > h3 {
+  font-size: 14px;
+  font-family: sans-serif;
+  color: var(--titleColor);
+}
+
+.icons {
+  color: var(--titleColor);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.icons:hover {
+  transform: scale(1.2);
+}
