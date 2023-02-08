@@ -9,7 +9,6 @@ import Image from "next/image";
 import Crown from "../../assets/crown.png";
 import { BsXLg } from "react-icons/bs";
 import useSound from "use-sound";
-// import clickSfx from "../../sounds/movement.mp3";
 
 const ChessBoard = () => {
   const [game, setGame] = useState(new Chess());
@@ -37,13 +36,6 @@ const ChessBoard = () => {
     // };
   }, []);
 
-  // const [playSfx] = useSound(clickSfx);
-
-  // console.log(history);
-
-  // useEffect(() => {}, [fen]);
-
-  // console.log(fen);
   //Let's perform a function on the game state
 
   function safeGameMutate(modify) {
@@ -69,12 +61,6 @@ const ChessBoard = () => {
     if (game.game_over()) {
       setModal(true);
     }
-
-    // if (game.in_draw()) {
-    //   window.alert("its a draw");
-    // }
-
-    //exit if the game is over
 
     if (
       game.game_over() ||
@@ -183,16 +169,16 @@ const ChessBoard = () => {
                 New Game
               </button>
             </div>
-
-            {/* <div className="ventana">sdfsdf</div> */}
           </div>
         </div>
         <div className={style.title}>
-          <h2>{isCPU ? "Player 1 vs CPU" : "Player 1 vs Player 2"}</h2>
-          <h3>
-            {" "}
-            {isCPU ? "White" : nextToMove === "w" ? "White" : "Black"} moves
-          </h3>
+          {<h2>{isCPU ? "Player 1 vs CPU" : "Player 1 vs Player 2"}</h2>}
+
+          {heigth > 780 && (
+            <h3>
+              {isCPU ? "White" : nextToMove === "w" ? "White" : "Black"} moves
+            </h3>
+          )}
         </div>
         <div className={style.chessBoard}>
           <Chessboard
@@ -223,7 +209,7 @@ const ChessBoard = () => {
               });
             }}
           >
-            {width > 1000 && <AiFillBackward className={style.icons} />}
+            {/* {width > 1000 && <AiFillBackward className={style.icons} />} */}
             <h3>Undo</h3>
             <h3>{width > 1000 && "last"}</h3>
             <h3>move</h3>
@@ -238,7 +224,7 @@ const ChessBoard = () => {
           width < 1000 && width > 560 && style.flex
         }`}
       >
-        {width > 1000 && (
+        {width > 1000 && heigth > 810 && (
           <div className={style.logo}>
             <h2>React Chess</h2>
             <Image src={Crown} width={70} height={70} alt={"asdf"} />

@@ -1,6 +1,6 @@
 .BottomBar {
   height: 55px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background: var(--topBackgorund);
@@ -8,6 +8,10 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+
+.notFixed {
+  display: none;
 }
 
 .BottomBar > h3 {
