@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 80px;
 }
 
 .modes {
@@ -12,9 +13,17 @@
   width: 40%;
   height: 650px;
   /* display: flex; */
-  /* flex-direction: column;
+  /* flex-direction: column;p
     justify-content: center;
     align-items: center; */
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
 }
 
 .icons {
@@ -24,7 +33,7 @@
 }
 
 .controls {
-  margin-top: 15px;
+  margin-top: 30px;
   width: 45%;
   /* border: 1px solid purple; */
   display: flex;
@@ -41,6 +50,10 @@
   cursor: pointer;
   border: none;
   transition: 0.3s ease-in-out;
+  margin: 0 15px;
+  display: flex;
+  justify-content: center;
+  min-width: 140px;
 }
 
 .extremeButtons:hover {
@@ -58,12 +71,21 @@
   font-family: sans-serif;
 }
 
+/* @media (max-width: 670px) {
+  .controls > button > h3 {
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+} */
+
 .reset {
   border-radius: 7px;
   padding: 3px 15px;
   cursor: pointer;
   border: none;
   transition: 0.3s ease-in-out;
+  min-width: 140px;
 }
 
 .reset:hover {
@@ -130,7 +152,7 @@
 
 .gameModes > button > h3 {
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .selected {
@@ -157,6 +179,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
+  text-align: center;
 }
 
 .history > h2 {
@@ -185,13 +209,13 @@
 
 .pieces > h3 {
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .number {
   font-family: sans-serif;
   /* font-weight: bold; */
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 15px;
   margin-bottom: 7px;
   display: inline;
@@ -235,3 +259,17 @@
 /* .containers {
     border: 1px solid red;
   } */
+
+.chessBoard {
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  /* width: 300px; */
+}
+
+/* .tablero {
+  width: 500px;
+} */
+
+/* .pushDown {
+  margin-top: 250px;
+} */

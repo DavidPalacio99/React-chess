@@ -1,5 +1,8 @@
 .TopBar {
   display: flex;
+  position: absolute;
+  top: 0;
+  z-index: 100;
   justify-content: space-between;
   width: 100%;
   height: 55px;

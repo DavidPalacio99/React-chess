@@ -1,6 +1,6 @@
 .BottomBar {
   height: 55px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   background: var(--topBackgorund);

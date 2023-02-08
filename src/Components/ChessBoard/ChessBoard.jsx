@@ -8,6 +8,8 @@ import White from "../../assets/white.png";
 import Image from "next/image";
 import Crown from "../../assets/crown.png";
 import { BsXLg } from "react-icons/bs";
+import useSound from "use-sound";
+// import clickSfx from "../../sounds/movement.mp3";
 
 const ChessBoard = () => {
   const [game, setGame] = useState(new Chess());
@@ -15,6 +17,27 @@ const ChessBoard = () => {
   const [nextToMove, setNextToMove] = useState("w");
   const [history, setHistory] = useState(game.history());
   const [modal, setModal] = useState(false);
+  const [width, setWidth] = useState(0);
+  const [heigth, setHeight] = useState(0);
+
+  console.log(width);
+
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => {
+        setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
+      },
+      true
+    );
+
+    // return () => {
+    //   window.removeEventListener("resize", true);
+    // };
+  }, []);
+
+  // const [playSfx] = useSound(clickSfx);
 
   // console.log(history);
 
@@ -77,6 +100,7 @@ const ChessBoard = () => {
   //Perform an action when a piece is droped by a user
 
   function onDrop(source, target) {
+    // playSfx();
     let move = null;
 
     safeGameMutate((game) => {
@@ -107,7 +131,7 @@ const ChessBoard = () => {
 
   return (
     <>
-      <div className={style.ChessBoard}>
+      <div className={`${style.ChessBoard} ${style.pushDown}`}>
         <div className={`disabled ${modal && "modal"}`}>
           <div className="gameOver">
             <BsXLg
@@ -170,8 +194,19 @@ const ChessBoard = () => {
             {isCPU ? "White" : nextToMove === "w" ? "White" : "Black"} moves
           </h3>
         </div>
+        <div className={style.chessBoard}>
+          <Chessboard
+            position={game.fen()}
+            onPieceDrop={onDrop}
+            // boardOrientation={"black"}
+            boardWidth={
+              width < 450 ? 320 : width < 680 || heigth < 900 ? 420 : 560
+            }
+            // arePremovesAllowed={true}
+            // className={style.tablero}
+          />
+        </div>
 
-        <Chessboard position={game.fen()} onPieceDrop={onDrop} />
         <div className={style.controls}>
           <button
             className={style.extremeButtons}
@@ -188,19 +223,28 @@ const ChessBoard = () => {
               });
             }}
           >
-            <AiFillBackward className={style.icons} />
-            <h3>Undo last move</h3>
+            {width > 1000 && <AiFillBackward className={style.icons} />}
+            <h3>Undo</h3>
+            <h3>{width > 1000 && "last"}</h3>
+            <h3>move</h3>
           </button>
           <button className={style.reset} onClick={resetGame}>
             <h3>Reset game</h3>
           </button>
         </div>
       </div>
-      <div className={style.modes}>
-        <div className={style.logo}>
-          <h2>React Chess</h2>
-          <Image src={Crown} width={70} height={70} alt={"asdf"} />
-        </div>
+      <div
+        className={`${style.modes} ${heigth < 900 && style.pushDown} ${
+          width < 1000 && width > 560 && style.flex
+        }`}
+      >
+        {width > 1000 && (
+          <div className={style.logo}>
+            <h2>React Chess</h2>
+            <Image src={Crown} width={70} height={70} alt={"asdf"} />
+          </div>
+        )}
+
         <div className={style.gameModes}>
           <h2>Game modes</h2>
           <button

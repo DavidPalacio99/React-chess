@@ -16,6 +16,7 @@
 
 .body {
   font-family: sans-serif;
+  overflow: hidden;
 }
 
 .app {
@@ -53,6 +54,13 @@
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
+}
+
+@media (max-width: 670px) {
+  .gameOver {
+    width: 350px;
+    height: 460px;
+  }
 }
 
 .gameOver > h2 {
@@ -151,8 +159,27 @@
   /* border: 1px solid blue; */
   margin: 0 auto;
   width: 60%;
-  height: calc(100vh - 113px);
+  height: calc(100vh - 57px);
   display: flex;
   align-items: center;
-  /* border: 1px solid red; */
+  border: 1px solid red;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 1600px) {
+  .board {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1250px) {
+  .board {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .board {
+    flex-direction: column;
+  }
 }

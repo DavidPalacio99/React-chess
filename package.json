@@ -10,15 +10,16 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "chess.js": "^0.13.3",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "next-themes": "^0.2.1",
     "normalize.css": "^8.0.1",
     "react": "18.2.0",
+    "react-chessboard": "^1.2.5",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
-    "react-chessboard": "^1.2.5",
-    "chess.js": "^0.13.3"
+    "use-sound": "^4.0.1"
   }
 }
