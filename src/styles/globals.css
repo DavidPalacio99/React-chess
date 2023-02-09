@@ -103,7 +103,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  border: 7px solid #f0f0f0;
+  border: 7px solid #cccccc;
   width: 140px;
   height: 140px;
 }
@@ -125,7 +125,7 @@
 }
 
 .win {
-  border: 7px solid rgb(21, 202, 52);
+  border: 7px solid rgb(35, 168, 58);
 }
 
 .lose {
