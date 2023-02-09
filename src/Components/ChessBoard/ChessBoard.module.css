@@ -1,11 +1,9 @@
 .ChessBoard {
   padding: 10px;
-  /* border: 1px solid rgb(185, 212, 31); */
   width: 60%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* margin-top: 90px; */
 }
 
 .modes {
@@ -17,15 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin-top: 40px; */
-  /* margin-bottom: 50px; */
 }
-
-/* @media (max-height: 720px) {
-  .modes {
-    margin-top: 50px;
-  }
-} */
 
 .flex {
   display: flex;
@@ -45,7 +35,6 @@
 .controls {
   margin-top: 20px;
   width: 45%;
-  /* border: 1px solid purple; */
   display: flex;
   justify-content: space-around;
 }
@@ -68,26 +57,12 @@
 
 .extremeButtons:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  /* transform: scale(0.95); */
 }
-
-/* .extremeButtons:active {
-  box-shadow: 0 5px 0 #208f5f;
-  transform: translateY(5px);
-} */
 
 .controls > button > h3 {
   font-size: 14px;
   font-family: sans-serif;
 }
-
-/* @media (max-width: 670px) {
-  .controls > button > h3 {
-    font-size: 13px;
-    font-family: sans-serif;
-    font-weight: bold;
-  }
-} */
 
 .reset {
   border-radius: 7px;
@@ -100,20 +75,11 @@
 
 .reset:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  /* transform: scale(0.95); */
 }
-
-/* .reset:active {
-  box-shadow: 0 5px 0 #808080;
-  transform: translateY(5px);
-} */
-
 .title {
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* gap: 15px; */
-  /* border: 1px solid yellow; */
 }
 
 .title > h2 {
@@ -192,7 +158,6 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* margin-bottom: 100px; */
   text-align: center;
 }
 
@@ -203,7 +168,6 @@
 
 .table {
   height: 250px;
-  /* border: 1px solid black; */
   width: 300px;
   border-radius: 7px;
   background-color: var(--buttons);
@@ -227,7 +191,6 @@
 
 .number {
   font-family: sans-serif;
-  /* font-weight: bold; */
   font-size: 14px;
   margin-left: 15px;
   margin-bottom: 7px;
@@ -268,10 +231,6 @@
 .moves {
   margin-right: 55px;
 }
-
-/* .containers {
-    border: 1px solid red;
-  } */
 
 .chessBoard {
   /* border: 1px solid red; */

@@ -1,5 +1,5 @@
 import { Inter } from "@next/font/google";
-import TopBar from "@/Components/Topbar/TopBar";
+
 import BottomBar from "@/Components/BottomBar/BottomBar";
 import ChessBoard from "@/Components/ChessBoard/ChessBoard";
 import style from "./index.module.css";
