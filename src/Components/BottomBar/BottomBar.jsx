@@ -17,7 +17,7 @@ const BottomBar = () => {
     );
   }, []);
   return (
-    <div className={`${style.BottomBar} ${heigth < 714 && style.notFixed}`}>
+    <div className={`${style.BottomBar} `}>
       <a href="https://github.com/DavidPalacio99" target={"_blanck"}>
         <BsGithub className={style.icons} />
       </a>
