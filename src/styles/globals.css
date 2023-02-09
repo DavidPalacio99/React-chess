@@ -47,7 +47,7 @@
   height: 450px;
   z-index: 1000;
   color: #000000;
-  background-color: #ffffff;
+  background-color: var(--buttons);
   z-index: 100000;
   position: relative;
   display: flex;
@@ -68,6 +68,7 @@
   font-weight: bold;
   font-size: 30px;
   margin-top: 40px;
+  color: var(--letters);
 }
 .gameOver > h4 {
   font-family: sans-serif;
@@ -75,6 +76,7 @@
   font-weight: 400;
   font-size: 18px;
   margin-top: 0px;
+  color: var(--letters);
 }
 
 .X {
@@ -82,7 +84,7 @@
   top: 12px;
   right: 12px;
   cursor: pointer;
-  /* color: var(--letters); */
+  color: var(--letters);
 }
 
 .ventana {
@@ -110,6 +112,7 @@
   /* border: 1px solid red; */
   /* margin-top: 10px; */
   width: 90%;
+  color: var(--letters);
   display: flex;
   justify-content: space-around;
   /* margin: 0 60px; */

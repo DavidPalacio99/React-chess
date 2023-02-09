@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Chessboard } from "react-chessboard";
 import { Chess } from "chess.js";
 import style from "./ChessBoard.module.css";
-import { AiFillBackward, AiFillForward } from "react-icons/ai";
 import Black from "../../assets/black.png";
 import White from "../../assets/white.png";
 import Image from "next/image";
@@ -19,9 +18,16 @@ const ChessBoard = () => {
   const [width, setWidth] = useState(0);
   const [heigth, setHeight] = useState(0);
 
+  const [play] = useSound("/sounds/move.mp3");
+  const [capture] = useSound("/sounds/capture.mp3");
+  const [notify] = useSound("/sounds/notify.mp3");
+
   console.log(width);
 
   useEffect(() => {
+    setHeight(window.innerHeight);
+    setWidth(window.innerWidth);
+
     window.addEventListener(
       "resize",
       () => {
@@ -47,6 +53,7 @@ const ChessBoard = () => {
   }
 
   const resetGame = () => {
+    notify();
     safeGameMutate((game) => {
       game.reset();
     });
@@ -56,6 +63,7 @@ const ChessBoard = () => {
 
   //Movement of computer
   function makeRandomMove() {
+    // play();
     const possibleMove = game.moves();
 
     if (game.game_over()) {
@@ -86,7 +94,6 @@ const ChessBoard = () => {
   //Perform an action when a piece is droped by a user
 
   function onDrop(source, target) {
-    // playSfx();
     let move = null;
 
     safeGameMutate((game) => {
@@ -99,6 +106,18 @@ const ChessBoard = () => {
     setNextToMove(game.turn());
     //illegal move
     if (move == null) return false;
+    // if (move.san.inlcudes("x")) {
+    //   capture();
+    // } else {
+    //   play();
+    // }
+
+    if (move.san.includes("x")) {
+      capture();
+    } else {
+      play();
+    }
+
     //valid move
 
     setTimeout(() => {
@@ -112,8 +131,6 @@ const ChessBoard = () => {
   const arr = history.filter((elem, i) => {
     return i % 2 === 0;
   });
-
-  console.log(game);
 
   return (
     <>
@@ -184,6 +201,7 @@ const ChessBoard = () => {
           <Chessboard
             position={game.fen()}
             onPieceDrop={onDrop}
+            areArrowsAllowed={true}
             // boardOrientation={"black"}
             boardWidth={
               width < 450 ? 320 : width < 680 || heigth < 900 ? 420 : 560
