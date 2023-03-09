@@ -4,6 +4,7 @@
   --titleColor: #dbe2ff;
   --buttons: #f0f0f0;
   --letters: #111;
+  --link: rgb(102, 102, 241);
 }
 
 [data-theme="dark"] {
@@ -12,6 +13,7 @@
   --titleColor: #ded7ce;
   --buttons: #6b6b6b;
   --letters: #fff;
+  --link: rgb(20, 39, 104);
 }
 
 .body {
@@ -41,7 +43,6 @@
 }
 
 .gameOver {
-  /* border: 1px solid red; */
   border-radius: 10px;
   width: 400px;
   height: 450px;
@@ -51,7 +52,6 @@
   z-index: 100000;
   position: relative;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
 }
@@ -72,7 +72,6 @@
 }
 .gameOver > h4 {
   font-family: sans-serif;
-  /* font-weight: bold; */
   font-weight: 400;
   font-size: 18px;
   margin-top: 0px;
@@ -109,13 +108,10 @@
 }
 
 .names {
-  /* border: 1px solid red; */
-  /* margin-top: 10px; */
   width: 90%;
   color: var(--letters);
   display: flex;
   justify-content: space-around;
-  /* margin: 0 60px; */
 }
 
 .names > h3 {
@@ -134,7 +130,6 @@
 
 .newGame {
   margin-top: 15px;
-  /* border: 1px solid red; */
   width: 100%;
   height: 60px;
   display: flex;
@@ -164,7 +159,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid red; */
 }
 
 @media (max-width: 1600px) {

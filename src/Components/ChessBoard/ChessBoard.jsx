@@ -22,8 +22,6 @@ const ChessBoard = () => {
   const [capture] = useSound("/sounds/capture.mp3");
   const [notify] = useSound("/sounds/notify.mp3");
 
-  console.log(width);
-
   useEffect(() => {
     setHeight(window.innerHeight);
     setWidth(window.innerWidth);
@@ -36,21 +34,15 @@ const ChessBoard = () => {
       },
       true
     );
-
-    // return () => {
-    //   window.removeEventListener("resize", true);
-    // };
   }, []);
 
-  //Let's perform a function on the game state
-
-  function safeGameMutate(modify) {
+  const safeGameMutate = (modify) => {
     setGame((g) => {
       const update = { ...g };
       modify(update);
       return update;
     });
-  }
+  };
 
   const resetGame = () => {
     notify();
@@ -61,9 +53,7 @@ const ChessBoard = () => {
     setHistory([]);
   };
 
-  //Movement of computer
-  function makeRandomMove() {
-    // play();
+  const makeRandomMove = () => {
     const possibleMove = game.moves();
 
     if (game.game_over()) {
@@ -77,23 +67,15 @@ const ChessBoard = () => {
       !isCPU
     )
       return;
-    //select random move
 
     const randomIndex = Math.floor(Math.random() * possibleMove.length);
 
-    //play random move
     safeGameMutate((game) => {
       game.move(possibleMove[randomIndex]);
-
-      // console.log(possibleMove[randomIndex]);
     });
-  }
+  };
 
-  // console.log(game.history());
-
-  //Perform an action when a piece is droped by a user
-
-  function onDrop(source, target) {
+  const onDrop = (source, target) => {
     let move = null;
 
     safeGameMutate((game) => {
@@ -104,13 +86,8 @@ const ChessBoard = () => {
       });
     });
     setNextToMove(game.turn());
-    //illegal move
+
     if (move == null) return false;
-    // if (move.san.inlcudes("x")) {
-    //   capture();
-    // } else {
-    //   play();
-    // }
 
     if (move.san.includes("x")) {
       capture();
@@ -118,15 +95,13 @@ const ChessBoard = () => {
       play();
     }
 
-    //valid move
-
     setTimeout(() => {
       makeRandomMove();
       setHistory(game.history());
     }, 200);
 
     return true;
-  }
+  };
 
   const arr = history.filter((elem, i) => {
     return i % 2 === 0;
@@ -202,12 +177,9 @@ const ChessBoard = () => {
             position={game.fen()}
             onPieceDrop={onDrop}
             areArrowsAllowed={true}
-            // boardOrientation={"black"}
             boardWidth={
               width < 450 ? 320 : width < 680 || heigth < 900 ? 420 : 560
             }
-            // arePremovesAllowed={true}
-            // className={style.tablero}
           />
         </div>
 
@@ -227,7 +199,6 @@ const ChessBoard = () => {
               });
             }}
           >
-            {/* {width > 1000 && <AiFillBackward className={style.icons} />} */}
             <h3>Undo</h3>
             <h3>{width > 1000 && "last"}</h3>
             <h3>move</h3>

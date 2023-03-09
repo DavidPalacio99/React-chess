@@ -1,9 +1,0 @@
-.board {
-  /* border: 1px solid blue; */
-  margin: 0 auto;
-  width: 60%;
-  height: calc(100vh - 113px);
-  display: flex;
-  align-items: center;
-  border: 1px solid red;
-}
